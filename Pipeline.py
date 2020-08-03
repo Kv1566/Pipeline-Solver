@@ -52,70 +52,67 @@ def frame_bgColor_change(p):
 def solve():
     for j in range(ROW):
         for i in range(COL):
-            thisCells = []
-            #print(btnUp[j][i].config('bg')[-1])
             if btnUp[i][j].config('bg')[-1] == HAVE_ROAD:
-                thisCells.append(True)
+                cells[i][j].append(True)
             else:
-                thisCells.append(False)
+                cells[i][j].append(False)
             #
             if btnRight[i][j].config('bg')[-1] == HAVE_ROAD:
-                thisCells.append(True)
+                cells[i][j].append(True)
             else:
-                thisCells.append(False)
+                cells[i][j].append(False)
             #
             if btnDown[i][j].config('bg')[-1] == HAVE_ROAD:
-                thisCells.append(True)
+                cells[i][j].append(True)
             else:
-                thisCells.append(False)
+                cells[i][j].append(False)
             #
             if btnLeft[i][j].config('bg')[-1] == HAVE_ROAD:
-                thisCells.append(True)
+                cells[i][j].append(True)
             else:
-                thisCells.append(False)
+                cells[i][j].append(False)
             #
             if btnCenter[i][j].config('bg')[-1] == START_COLOR:
-                thisCells.append(True)
-                thisCells.append(False)
+                cells[i][j].append(True)
+                cells[i][j].append(False)
             elif btnCenter[i][j].config('bg')[-1] == END_COLOR:
-                thisCells.append(False)
-                thisCells.append(True)
+                cells[i][j].append(False)
+                cells[i][j].append(True)
             else:
-                thisCells.append(False)
-                thisCells.append(False)
+                cells[i][j].append(False)
+                cells[i][j].append(False)
             #
             if frmCell[i][j].config('bg')[-1] == CAN_MOVE:
-                thisCells.append(True) # initially movable
-                thisCells.append(False)
-                thisCells.append(False)
-                thisCells.append(False)                
+                cells[i][j].append(True) # initially movable
+                cells[i][j].append(False)
+                cells[i][j].append(False)
+                cells[i][j].append(False)                
             elif frmCell[i][j].config('bg')[-1] == MOVE_NOMOVE:
-                thisCells.append(True) # initially movable
-                thisCells.append(True) # cannot move after move
-                thisCells.append(False)
-                thisCells.append(False)                
+                cells[i][j].append(True) # initially movable
+                cells[i][j].append(True) # cannot move after move
+                cells[i][j].append(False)
+                cells[i][j].append(False)                
             elif frmCell[i][j].config('bg')[-1] == ROTATE:
-                thisCells.append(True) # initially movable
-                thisCells.append(False)
-                thisCells.append(True) # will rotate when each move
-                thisCells.append(False)                
+                cells[i][j].append(True) # initially movable
+                cells[i][j].append(False)
+                cells[i][j].append(True) # will rotate when each move
+                cells[i][j].append(False)                
             elif frmCell[i][j].config('bg')[-1] == MOVE2_CANMOVE:
-                thisCells.append(False)
-                thisCells.append(False)                
-                thisCells.append(False)                
-                thisCells.append(True) # initially cannot move until totally 2 steps of move               
+                cells[i][j].append(False)
+                cells[i][j].append(False)                
+                cells[i][j].append(False)                
+                cells[i][j].append(True) # initially cannot move until totally 2 steps of move               
             else:
-                thisCells.append(False)
-                thisCells.append(False)
-                thisCells.append(False)
-                thisCells.append(False)                
-            #
-            cells[i][j] = thisCells
+                cells[i][j].append(False)
+                cells[i][j].append(False)
+                cells[i][j].append(False)
+                cells[i][j].append(False)                
     import pandas as pd
     df = pd.DataFrame(cells)
     #df.columns = [['up', 'right', 'down', 'left', 'start', 'end', 'canMove', 'move_noMove', 'rotate', 'move2_canMove']]
     # 以上為遊戲題目出題之視覺界面設定完成, 轉化出之df為出題結果之三維陣列
     # 接下去才開始進入解題, 解題程式尚未寫作
+    print(df)
     getMovableGroup()
     move(0, cells)
 
@@ -129,7 +126,6 @@ def move(steps, cells):
     thisMove()
     check()
     steps += 1
-    #print(df)
     move(steps, cells)
 
 def thisMove():
