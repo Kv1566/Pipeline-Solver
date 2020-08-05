@@ -1,4 +1,5 @@
 # Pipeline-Solver
+# 程式碼完全公開, 可隨意使用, 也可隨意參與
 
 這是手機遊戲名為Pipeline Adventures的python解題程式,
 目前只做好了初始的題目設定界面而已,
