@@ -161,10 +161,10 @@ def cells_setting():
         #print(pwCells.winfo_children())
 
     if rows > 0 and cols > 0:
-        w = max(143*cols+10, 450)
+        w = max(143*cols+60, 500)
     else:
-        w = 450
-    h = 150*rows+90
+        w = 500
+    h = 150*rows+150
     x = (screenWidth - w) / 2
     y = (screenHeight - h) / 2
     root.geometry('%dx%d+%d+%d' % (w,h,x,y))
@@ -179,7 +179,7 @@ def cells_setting():
     btnCenter = [[0 for x in range(rows)] for y in range(cols)]
     pwInner = PanedWindow(orient=HORIZONTAL, width=150*cols)
     for j in range(cols):
-        btn = Button(pwInner, text='上', width=18, height=1, padx=2)
+        btn = Button(pwInner, text='上', width=21, height=1, padx=2)
         pwInner.add(btn)
     pwCells.add(pwInner)
     for i in range(rows):
@@ -210,6 +210,11 @@ def cells_setting():
         btn = Button(pwInner, text='右', width=2)
         pwInner.add(btn)
         pwCells.add(pwInner)
+    pwInner = PanedWindow(orient=HORIZONTAL, width=150*cols)
+    for j in range(cols):
+        btn = Button(pwInner, text='下', width=21, height=1, padx=2)
+        pwInner.add(btn)
+    pwCells.add(pwInner)
 
     pwInner = PanedWindow(orient=HORIZONTAL)
     btnSolve = Button(pwInner, text='Solve', bg='yellow', command=solve)
