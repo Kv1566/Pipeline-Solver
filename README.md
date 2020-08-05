@@ -14,10 +14,10 @@
 感謝!
 
 # 版本:
-2. Pipeline.0.2.0 (目前最新版本): <br>
+. Pipeline.0.2.0 (目前最新版本): <br>
   rows及cols可在視窗中任意更改以變更格子m*n大小<br>
   上下右右移動按鈕, 暫時備用而已<br>
   解題尚未寫作
   
-1. Pipeline.py: <br>
+. Pipeline.py: <br>
   初始版本
