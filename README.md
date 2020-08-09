@@ -28,3 +28,5 @@
   
 * ## Pipeline.py - 2020/08/03 : <br>
   初始版本
+
+MarkDown語法參考頁:https://github.com/emn178/markdown
