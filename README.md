@@ -1,7 +1,9 @@
 # Pipeline-Solver
 # 程式碼完全公開，可隨意使用，也可隨意參與
 
-這是手機遊戲名為Pipeline Adventures的python解題程式，
+嚴重錯誤修正: 原先打上來的遊戲名稱打成Pipeline Adventures了，打錯了，應該是Pepeline Adventures！第二個英文字母是e不是i
+
+這是手機遊戲名為Pepeline Adventures的python解題程式，
 目前只做好了初始的題目設定界面而已，
 正式的解題程式碼還沒開始！ => 解題程式從 1.0.0 版起正式上線！
 
